@@ -1,0 +1,31 @@
+# LoadStrike Pro v11.0 — requirements
+# pip install -r requirements.txt
+
+# ── Core (required) ───────────────────────────────────────────────────────────
+aiohttp>=3.9.0              # async HTTP/WebSocket engine
+
+# ── Optional — install what you need ─────────────────────────────────────────
+aiohttp-socks>=0.8.0        # SOCKS5 proxy support
+pyyaml>=6.0                 # YAML config files
+tomli>=2.0.0                # TOML config (Python < 3.11)
+
+# ── Performance ───────────────────────────────────────────────────────────────
+sortedcontainers>=2.4.0     # O(log n) percentile calculation (recommended)
+uvloop>=0.19.0              # libuv event loop — 30-80% RPS boost (Linux/macOS)
+
+# ── HTTP/2 multiplexing ───────────────────────────────────────────────────────
+httpx[http2]>=0.27.0        # h2_multiplex mode
+
+# ── gRPC ─────────────────────────────────────────────────────────────────────
+grpcio>=1.60.0              # gRPC flood mode
+grpcio-tools>=1.60.0        # gRPC proto compilation (optional)
+
+# ── Live dashboard & distributed ─────────────────────────────────────────────
+websockets>=12.0            # live dashboard + distributed mode
+
+# ── Reporting ─────────────────────────────────────────────────────────────────
+weasyprint>=60.0            # PDF report export
+
+# ── Testing ───────────────────────────────────────────────────────────────────
+pytest>=8.0.0               # test runner
+pytest-asyncio>=0.23.0      # async test support
